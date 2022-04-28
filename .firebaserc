@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "vitrolerapp": {
+      "hosting": {
+        "VitroleraApp": [
+          "vitrolerapp"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "vitrolerapp"
+  }
+}
