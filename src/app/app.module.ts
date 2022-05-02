@@ -14,6 +14,9 @@ import {MatButtonModule} from '@angular/material/button';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
+import { ItemCardComponent } from './components/item-card/item-card.component';
+import {MatCardModule} from '@angular/material/card';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 
@@ -23,7 +26,9 @@ import {MatIconModule} from '@angular/material/icon';
   declarations: [
     AppComponent,
     NavbarComponent,
-    HomepageComponent
+    HomepageComponent,
+    ItemCardComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +41,7 @@ import {MatIconModule} from '@angular/material/icon';
     MatButtonModule,
     MatToolbarModule,
     MatIconModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
