@@ -1,15 +1,37 @@
+<mat-toolbar>
+  <button mat-icon-button class="icon" aria-label="icon-button with menu icon">
+    <mat-icon (click)="drawer.toggle()" >apps</mat-icon>
+</button>
+  <span class="blank">  </span>
+  <span>La Vitrolera</span>
+</mat-toolbar>
+
+<!-- Hello little boy, seems like you're looking into my page, welcome and enjoy the show-->
 <mat-drawer-container class="example-container" autosize>
   <mat-drawer #drawer class="example-sidenav" mode="side">
-    <p>Menu</p>
-    <button mat-raised-button color="primary">
-      Home
-    </button>
+    <ul>
+      <li>
+        <button mat-raised-button color="primary">
+          Inicio
+        </button>
+      </li>
+      <li>
+        <button mat-raised-button color="primary">
+          Catalogo
+        </button>
+      </li>
+      <li>
+        <button mat-raised-button color="primary">
+          Cerrar Sesion
+        </button>
+      </li>
+
+
+    </ul>
+  
   </mat-drawer>
 
   <div class="example-sidenav-content">
-    <button type="button" mat-button (click)="drawer.toggle()">
-      Toggle sidenav
-    </button>
   </div>
 
 </mat-drawer-container>
