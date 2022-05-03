@@ -21,6 +21,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { ProductsComponent } from './pages/products/products.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 
@@ -45,6 +46,7 @@ import { ProductsComponent } from './pages/products/products.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
+    FlexLayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
