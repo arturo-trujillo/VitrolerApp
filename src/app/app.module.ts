@@ -20,6 +20,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { ProductsComponent } from './pages/products/products.component';
 
 
 
@@ -29,7 +30,8 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
     NavbarComponent,
     HomepageComponent,
     ItemCardComponent,
-    FooterComponent
+    FooterComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
