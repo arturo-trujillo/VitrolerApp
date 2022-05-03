@@ -6,16 +6,15 @@
 
         </div>
 
-            <img class="img" src="http://www.2000agro.com.mx/wp-content/uploads/aguas-frescas.jpg" alt="Image not loading.">
+            <div class="img" alt="Image not loading."></div>
+
 </div>
-<p class="title">Productos Destacados</p>
-<div class="scrolling-wrapper-flexbox">
-    <app-item-card class="card"></app-item-card>
-    <app-item-card class="card"></app-item-card>
-    <app-item-card class="card"></app-item-card>
-    <app-item-card class="card"></app-item-card>
-    <app-item-card class="card"></app-item-card>
-    <app-item-card class="card"></app-item-card>
+    <p class="title" >Productos Destacados</p>
+
+<div class="scrolling-wrapper-flexbox" >
+
+        <app-item-card *ngFor="let item of items" class="card" [item]="item" ></app-item-card>
+   
 </div>
 
 

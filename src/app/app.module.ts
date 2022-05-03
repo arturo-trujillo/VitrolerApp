@@ -17,8 +17,9 @@ import {MatIconModule} from '@angular/material/icon';
 import { ItemCardComponent } from './components/item-card/item-card.component';
 import {MatCardModule} from '@angular/material/card';
 import { FooterComponent } from './components/footer/footer.component';
-
-
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 
 
 
@@ -33,15 +34,15 @@ import { FooterComponent } from './components/footer/footer.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideAuth(() => getAuth()),
-    provideFirestore(() => getFirestore()),
     BrowserAnimationsModule,
     MatSidenavModule,
     MatButtonModule,
     MatToolbarModule,
     MatIconModule,
     MatCardModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
