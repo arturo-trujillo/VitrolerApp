@@ -22,6 +22,16 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { ProductsComponent } from './pages/products/products.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { CartComponent } from './pages/cart/cart.component';
+import { LoginComponent } from './components/login/login.component';
+import { ProductComponent } from './components/product/product.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { ReactiveFormsModule } from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import { RegisterComponent } from './components/register/register.component';
+
+
 
 
 
@@ -32,7 +42,11 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     HomepageComponent,
     ItemCardComponent,
     FooterComponent,
-    ProductsComponent
+    ProductsComponent,
+    CartComponent,
+    LoginComponent,
+    ProductComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -47,6 +61,10 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     AngularFirestoreModule,
     AngularFireAuthModule,
     FlexLayoutModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

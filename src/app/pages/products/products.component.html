@@ -1,8 +1,10 @@
 <app-navbar></app-navbar>
-<div >
+<div>
     <h1 style="color: white; text-align: center;" > Productos </h1>
-        <div fxlayout="row wrap"  fxLayoutGap="20px" fxLayoutGap="20px grid">
-            <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let item of items" >
+</div>
+<div class="wrapper">
+        <div  fxlayout="row wrap"   fxLayoutGap="16px grid">
+            <div fxFlex="16%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let item of items" >
                     <app-item-card  class="card" [item]="item" ></app-item-card>
             </div>
 

@@ -1,12 +1,19 @@
 <mat-toolbar class="toolbar">
   <button mat-icon-button class="icon" aria-label="icon-button with menu icon">
-    <mat-icon (click)="drawer.toggle()" >apps</mat-icon>
+    <mat-icon class="material-symbols-outlined" (click)="drawer.toggle()" >apps</mat-icon>
 </button>
   <span class="blank">  </span>
   <span>La Vitrolera</span>
+  <span style="flex:  1 1 auto"></span>
+  <button class="cart-button" mat-fab color="primary" onclick="location.href='/cart'" >
+
+    <mat-icon class="material-symbols-outlined">
+      shopping_cart_checkout
+    </mat-icon>
+  </button>
 </mat-toolbar>
 
-<!-- Hello little boy, seems like you're looking into my page, welcome and enjoy the show-->
+<!-- Go n look for better code somewhere else-->
 <mat-drawer-container class="example-container" autosize>
   <mat-drawer #drawer class="example-sidenav" mode="side">
     <ul>
@@ -20,14 +27,18 @@
           Catalogo
         </button>
       </li>
-      
+    </ul>
+    <ul style="margin-top: 650px;">
       <li class="vblank">
-        <button mat-raised-button color="primary">
-          Cerrar Sesion
+        <button mat-raised-button color="accent" (click)="loadregister()">
+          Registrar
         </button>
       </li>
-
-
+      <li class="vblank">
+        <button mat-raised-button color="accent" (click)="loadlogin()">
+          Iniciar sesion
+        </button>
+      </li>
     </ul>
   
   </mat-drawer>

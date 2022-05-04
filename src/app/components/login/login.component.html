@@ -1,0 +1,18 @@
+
+<h2 mat-dialog-title>Iniciar Sesion</h2>
+<mat-dialog-content class="mat-typography">
+    <mat-form-field appearance="outline">
+      <mat-label> Correo</mat-label>
+      <input matInput placeholder="pat@example.com" [formControl]="email" required>
+      <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+  <mat-form-field appearance="outline">
+      <mat-label> Contraseña</mat-label>
+      <input type="password" matInput [formControl]="password" required>
+      <mat-error *ngIf="password.invalid">{{getErrorMessage()}}</mat-error>
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button cdkFocusInitial (click)="login()">Siguiente</button>
+</mat-dialog-actions>
