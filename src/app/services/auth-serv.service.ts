@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
+import { take } from 'rxjs';
+import { UserRolesService } from './user-roles.service';
 
 
 @Injectable({
@@ -8,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class AuthServService {
   userData: any; 
-  constructor(private auth: AngularFireAuth, private router: Router) { 
+  constructor(private auth: AngularFireAuth, private router: Router, private UserS: UserRolesService) { 
     this.auth.authState.subscribe((user) => {
       if (user) {
         this.userData = user;
@@ -26,14 +28,26 @@ export class AuthServService {
   login(email:string, password:string) {
     this.auth.signInWithEmailAndPassword( email, password)
     .then((result)=>{
-  //      this.router.navigate(['/dashboard'])
+        var l;
+         this.UserS.users.pipe(take(1)).subscribe(x =>{ 
+          l = (x.find( (y:any) => y.id == result.user?.uid)).role
+          if(l == "0" ){
+
+            console.log("to dash!")
+            this.router.navigate(['admin-dash'])
+          }
+         })
+        
+        
     })
     .catch(()=> alert('No se pudo iniciar sesion'))
   }
 
   createUser(email:string, password:string){
     this.auth.createUserWithEmailAndPassword(email,password)
+
     .then((result)=>{
+      this.UserS.createUser(result.user?.uid || " ", "1" );
       alert("Usuario generado!")
     })
     .catch(()=> alert('No se pudo registrar'))

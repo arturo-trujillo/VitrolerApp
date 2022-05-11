@@ -30,6 +30,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import { RegisterComponent } from './components/register/register.component';
+import { AdminDashComponent } from './pages/admin-dash/admin-dash.component';
 
 
 
@@ -46,7 +47,8 @@ import { RegisterComponent } from './components/register/register.component';
     CartComponent,
     LoginComponent,
     ProductComponent,
-    RegisterComponent
+    RegisterComponent,
+    AdminDashComponent
   ],
   imports: [
     BrowserModule,
