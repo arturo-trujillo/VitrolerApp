@@ -1,5 +1,15 @@
 # VitroleraApp
 
+
+# To Do
+
+- [ ] Product Page
+- [ ] Cart
+- [ ] Admin Catalog Update
+- [ ] Admin Orders Report
+- [ ] Admin Sales Report
+- [ ] Catalog page style fix
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.2.
 
 ## Development server
