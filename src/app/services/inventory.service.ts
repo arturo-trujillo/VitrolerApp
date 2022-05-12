@@ -17,9 +17,18 @@ export class InventoryService {
  
 
   }
-  update(item: any) {
-    //this.itemDoc.update(item);
+  
+  createItem(item:any){
+    const id= this.afs.createId();
+    item.id = id;
+    this.itemCol.doc(id).set(item);
   }
 
+  editItem(item:any){
+    this.afs.doc<any>('productos/' + item.id).update(item);
+  }
 
+  deleteItem(item:any){
+    this.afs.doc<any>('productos/'+ item.id).delete();
+  }
 }

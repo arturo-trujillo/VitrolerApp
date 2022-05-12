@@ -1,0 +1,22 @@
+<h1 mat-dialog-title align="center">Agregar Articulo</h1>
+<div mat-dialog-content align="center" class="content">
+  <mat-form-field appearance="fill">
+    <mat-label>Imagen</mat-label>
+    <input matInput [(ngModel)]="Imagen" >
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Nombre</mat-label>
+    <input matInput [(ngModel)]="Nombre">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Precio</mat-label>
+    <input matInput [(ngModel)]="Precio">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Stock</mat-label>
+    <input matInput [(ngModel)]="stockSinPedido">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button  (click)='updateItem()' cdkFocusInitial>Actualizar </button>
+</div>

@@ -30,7 +30,9 @@ export class UserRolesService {
 
    getRole(id:any){
 
-      console.log(this.users.subscribe);
+      console.log(this.users.subscribe(x => {
+        
+      }));
       return "1";
     //  var a = (this.users.pipe(take(1)).subscribe( x =>{
        

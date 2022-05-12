@@ -1,1 +1,74 @@
-<p>Ero Sucks Cock</p>
+
+<app-navbar> </app-navbar>
+<div class="inventory">
+ <h1> Inventario</h1>
+  
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="Imagen">
+      <th mat-header-cell *matHeaderCellDef> Imagen </th>
+      <td mat-cell *matCellDef="let element"><img  src={{element.Imagen}}> </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="Nombre">
+      <th mat-header-cell *matHeaderCellDef> Nombre </th>
+      <td mat-cell *matCellDef="let element"> {{element.Nombre}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="Precio">
+      <th mat-header-cell *matHeaderCellDef> Precio </th>
+      <td mat-cell *matCellDef="let element"> {{element.Precio}} </td>
+    </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="stockSinPedido">
+      <th mat-header-cell *matHeaderCellDef> Stock </th>
+      <td mat-cell *matCellDef="let element"> {{element.stockSinPedido}} </td>
+    </ng-container>
+    
+    <ng-container matColumnDef="buttons">
+        <th mat-header-cell *matHeaderCellDef> Accciones </th>
+        <td mat-cell *matCellDef="let element"> 
+            <button mat-mini-fab color="accent" (click)="openEdit(element)">
+                <mat-icon>
+                    edit
+                </mat-icon>
+            </button>
+            <button mat-mini-fab color="warn" style="margin-left: 5px;" (click)="delete(element)">
+                <mat-icon>
+                    delete
+                </mat-icon>
+            </button>
+        </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+  </table>
+  
+
+  
+</div>
+
+<div>
+    <button mat-raised-button color="primary" class="add" (click)="openAdd()"> Añadir articulo</button>
+
+</div>
+
+
+
+
+<div class="items">
+    <ul class="items2">
+        <li>
+            <button mat-raised-button color="accent" > Generar reporte de ventas</button>
+        </li>
+        <li>
+            <button mat-raised-button color="warn"> Ver pedidos</button>
+        </li>
+    </ul>
+</div>

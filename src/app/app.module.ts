@@ -31,6 +31,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import { RegisterComponent } from './components/register/register.component';
 import { AdminDashComponent } from './pages/admin-dash/admin-dash.component';
+import {MatTableModule} from '@angular/material/table';
+import { AddmodalComponent } from './pages/admin-dash/addmodal/addmodal.component';
+import { EditmodalComponent } from './pages/admin-dash/editmodal/editmodal.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -48,7 +52,9 @@ import { AdminDashComponent } from './pages/admin-dash/admin-dash.component';
     LoginComponent,
     ProductComponent,
     RegisterComponent,
-    AdminDashComponent
+    AdminDashComponent,
+    AddmodalComponent,
+    EditmodalComponent
   ],
   imports: [
     BrowserModule,
@@ -67,6 +73,8 @@ import { AdminDashComponent } from './pages/admin-dash/admin-dash.component';
     MatFormFieldModule,
     ReactiveFormsModule,
     MatInputModule,
+    MatTableModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
