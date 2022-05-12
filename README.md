@@ -5,7 +5,7 @@
 
 - [ ] Product Page
 - [ ] Cart
-- [ ] Admin Catalog Update
+- [X] Admin Catalog Update
 - [ ] Admin Orders Report
 - [ ] Admin Sales Report
 - [ ] Catalog page style fix
