@@ -1,4 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Inject } from '@angular/core';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { ProductComponent } from '../product/product.component';
 
 @Component({
   selector: 'app-item-card',
@@ -6,10 +8,20 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./item-card.component.sass']
 })
 export class ItemCardComponent implements OnInit {
-  @Input() item: any  
-  constructor( ) { }
 
+ 
+
+  @Input() item: any  
+  constructor(public dialog: MatDialog) { }
+
+  loadAdd(data:any){
+    const dialogRef = this.dialog.open(ProductComponent,{
+      data:data,
+    });
+  }
   ngOnInit(): void {
+
+    
     
    
   }

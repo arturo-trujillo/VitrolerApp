@@ -29,6 +29,7 @@ export class EditmodalComponent implements OnInit {
       Nombre:this.Nombre,
       Precio:this.Precio,
       stockSinPedido:this.stockSinPedido,
+      id:this.data.id,
     }
     this.inventoryservice.editItem(item)
     
