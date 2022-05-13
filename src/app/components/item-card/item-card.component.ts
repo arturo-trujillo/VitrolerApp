@@ -9,18 +9,26 @@ import { ProductComponent } from '../product/product.component';
 })
 export class ItemCardComponent implements OnInit {
 
- 
+  
 
   @Input() item: any  
   constructor(public dialog: MatDialog) { }
 
+  
+
   loadAdd(data:any){
-    const dialogRef = this.dialog.open(ProductComponent,{
-      data:data,
-    });
+    if(localStorage.getItem("user")== null){
+      alert("Inicie sesion porfavor")
+    }else{
+
+      const dialogRef = this.dialog.open(ProductComponent,{
+        data:data
+      });
+    }
   }
   ngOnInit(): void {
 
+    
     
     
    

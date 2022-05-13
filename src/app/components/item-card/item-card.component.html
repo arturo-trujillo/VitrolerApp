@@ -9,7 +9,7 @@
         ${{item.Precio}} MXN 
       </mat-card-content>
       <mat-card-actions class="button">
-        <button mat-button  >Agregar</button>
+        <button mat-button (click)="loadAdd(this.item)" >Agregar</button>
       </mat-card-actions>
     </mat-card>
 </div>

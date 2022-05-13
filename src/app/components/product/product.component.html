@@ -1,23 +1,26 @@
-<table>
-    <tr>
-        <td>
-            <img src="" alt="Item Image">
-        </td>
-        <td>
-            <ul>
-                <li>
+<div class="modal">
 
-                    <h1> Nombre</h1>
-                </li>
-                <li>
-                    <h1>Precio </h1>
-                </li>
-                <li>
-                    <h1> Cantidad:</h1>
-                    <INPUT TYPE="NUMBER" MIN="0" MAX="10" STEP="2" VALUE="6" SIZE="6">
-                </li>
-            </ul>
-            <button mat-button > Agregar al carrito</button>
-        </td>
-    </tr>
-</table>
+    <table>
+        <tr>
+            <td>
+                <img [(ngModel)]="Imagen" src="{{this.Imagen}}" alt="Item Image">
+            </td>
+            <td class="description">
+                <ul>
+                    <li>
+    
+                        <h1  [(ngModel)]="Nombre">{{this.Nombre}} </h1>
+                    </li>
+                    <li>
+                        <h2  [(ngModel)]="Precio">${{this.Precio}} MXN</h2>
+                    </li>
+                    <li>
+                        <h3 > Cantidad:</h3>
+                        <INPUT  class="roller" TYPE="NUMBER" MIN="0" MAX="10" STEP="2" VALUE="1" SIZE="6">
+                    </li>
+                </ul>
+                <button style="margin-left: 65px; margin-top: 55px;" mat-raised-button color="primary" (click)="addToCart()"> Agregar al carrito</button>
+            </td>
+        </tr>
+    </table>
+</div>
