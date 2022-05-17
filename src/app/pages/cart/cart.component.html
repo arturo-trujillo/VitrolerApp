@@ -1,3 +1,62 @@
 <app-navbar></app-navbar>
-<p>cart works!</p>
+<div style="height: 100%;"> 
+<div class="mattable">
+
+
+    <table mat-table *ngIf="dataSource2.length>0" [dataSource]="dataSource2">
+        <ng-container matColumnDef="Imagen">
+            <th mat-header-cell *matHeaderCellDef>
+                Imagen
+            </th>
+            <td mat-cell *matCellDef="let element"><img  src={{element.item.Imagen}}></td>
+        </ng-container>
+    
+      <ng-container matColumnDef="Nombre">
+          <th mat-header-cell *matHeaderCellDef> Nombre </th>
+          <td mat-cell *matCellDef="let element"> {{element.item.Nombre}} </td>
+        </ng-container>
+    
+        <!-- Weight Column -->
+        <ng-container matColumnDef="Cantidad">
+        <th mat-header-cell *matHeaderCellDef> Cantidad </th>
+        <td mat-cell *matCellDef="let element ; let i=index ">   <INPUT  (change)="updateElem(element, $event)" name="cantidad" class="roller" TYPE="NUMBER" MIN="0"  STEP="1" value='{{element.cantidad}}' SIZE="6"> </td>
+        </ng-container>
+      
+        <!-- Weight Column -->
+        <ng-container matColumnDef="precioUnitario">
+          <th mat-header-cell *matHeaderCellDef> Precio Unitario </th>
+          <td mat-cell *matCellDef="let element"> {{element.item.Precio}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="precioTotal">
+            <th mat-header-cell *matHeaderCellDef> Precio Total </th>
+            <td mat-cell *matCellDef="let element"> {{element.precioTotal}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="buttons">
+            <th mat-header-cell *matHeaderCellDef> Accciones </th>
+            <td mat-cell *matCellDef="let element; let i = index">                
+                <button mat-mini-fab color="warn" style="margin-left: 5px;" (click)="deleteElem(element)">
+                    <mat-icon>
+                        delete
+                    </mat-icon>
+                </button>
+            </td>
+        </ng-container>
+    
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;let i = index;"></tr>
+    </table>>
+</div>
+<div >
+    <h1 style="color: white;"> {{total}}</h1>
+    
+    <button mat-raised-button> Siguiente</button>
+</div>
+
+
+
+
+</div>
+
 <app-footer></app-footer>

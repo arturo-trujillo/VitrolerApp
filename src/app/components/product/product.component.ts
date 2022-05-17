@@ -22,7 +22,7 @@ export class ProductComponent implements OnInit {
   }
 
   addToCart(){
-    this.carts.addToCart(this.id, document.querySelector('input')?.value);
+    this.carts.addToCart(this.id, document.querySelector('input')?.value, this.item);
   }
   
 
