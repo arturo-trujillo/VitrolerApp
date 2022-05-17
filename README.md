@@ -3,8 +3,8 @@
 
 # To Do
 
-- [ ] Product Page
-- [ ] Cart
+- [ X] Product Page
+- [ X] Cart
 - [X] Admin Catalog Update
 - [ ] Admin Orders Report
 - [ ] Admin Sales Report
