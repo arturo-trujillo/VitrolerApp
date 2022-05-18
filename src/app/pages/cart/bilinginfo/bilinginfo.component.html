@@ -1,0 +1,68 @@
+
+   
+<h1 mat-dialog-title align="center">Agregar Informacion de Contacto</h1>
+<div mat-dialog-content align="center" class="content">
+  <mat-stepper [linear]="isLinear" #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Contacto</ng-template>
+        <mat-form-field appearance="fill">
+          <mat-label>Ingresa tu nombre</mat-label>
+          <input matInput placeholder="Nombre(s)" formControlName="firstCtrl" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Ingresa tu apellido</mat-label>
+          <input matInput placeholder="Apellidos" formControlName="firstCtrl1" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Ingresa tu numero de telefono</mat-label>
+          <input matInput placeholder="Telefono" formControlName="firstCtrl2" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Ingresa tu correo electronico</mat-label>
+          <input matInput placeholder="Correo electronico" formControlName="firstCtrl3" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperNext>Siguiente</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup" label="Envio">
+      <form [formGroup]="secondFormGroup">
+        <mat-form-field appearance="fill">
+          <mat-label>Calle y numero de casa</mat-label>
+          <input matInput placeholder="calle y numero" formControlName="secondCtrl" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Colonia</mat-label>
+          <input matInput placeholder="Colonia" formControlName="secondCtrl1" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Codigo postal</mat-label>
+          <input matInput placeholder="C.P." formControlName="secondCtrl2" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Estado</mat-label>
+          <input matInput placeholder="Estado" formControlName="secondCtrl3" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Municipio</mat-label>
+          <input matInput placeholder="Municipio" formControlName="secondCtrl4" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Anterior</button>
+          <button mat-button matStepperNext>Siguiente</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Listo</ng-template>
+      <h2> Muchas Gracias por tu compra.</h2>
+      <p>El pago se ha completado con exito.</p>
+      <p>Se le hara llegar a su correo la informacion de su pedido.</p>
+      <div>
+        <button mat-button mat-dialog-close (click)="addPurchase()">Cerrar</button>
+      </div>
+    </mat-step>
+  </mat-stepper>
+</div>

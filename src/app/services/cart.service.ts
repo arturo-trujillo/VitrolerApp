@@ -46,7 +46,17 @@ export class CartService {
     })
    }
 
+   clearCart(){
+    const userid =  localStorage.getItem("user");
+    var json = JSON.parse(userid || "");
+    const id = json["uid"]
+    let key =  "carrito";
 
+     this.usersCollection.doc(id).update({
+       [key]: deleteField()
+     });
+
+   }
    deleteFromCart(itemid:any, item:any){
     const userid =  localStorage.getItem("user");
     var json = JSON.parse(userid || "");

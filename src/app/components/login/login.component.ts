@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl,Validators } from '@angular/forms';
 import { AuthServService } from 'src/app/services/auth-serv.service';
+import { MatDialog,MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-login',
@@ -29,6 +30,7 @@ export class LoginComponent implements OnInit {
 
   login(){
     this.auth.login(this.email.value,this.password.value);
+    //this.dialogRef.click();
   }
 
   ngOnInit(): void {

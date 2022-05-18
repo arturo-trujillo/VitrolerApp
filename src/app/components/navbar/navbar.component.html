@@ -28,7 +28,7 @@
         </button>
       </li>
     </ul>
-    <ul style="margin-top: 320%;">
+    <ul style="margin-top: 320%;" *ngIf="userlogged()">
       <li class="vblank">
         <button mat-raised-button color="accent" (click)="loadregister()">
           Registrar
@@ -39,6 +39,11 @@
           Iniciar sesion
         </button>
       </li>
+    </ul>
+    <ul style="margin-top: 320%;"  *ngIf="!userlogged()">
+      <button mat-raised-button color="warn" (click)="logout()">
+        Cerrar Sesion
+      </button>
     </ul>
   
   </mat-drawer>

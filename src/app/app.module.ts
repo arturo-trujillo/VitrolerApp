@@ -35,6 +35,12 @@ import {MatTableModule} from '@angular/material/table';
 import { AddmodalComponent } from './pages/admin-dash/addmodal/addmodal.component';
 import { EditmodalComponent } from './pages/admin-dash/editmodal/editmodal.component';
 import { FormsModule } from '@angular/forms';
+import { BilinginfoComponent } from './pages/cart/bilinginfo/bilinginfo.component';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { VentasComponent } from './pages/admin-dash/ventas/ventas.component';
+import { PedidosComponent } from './pages/admin-dash/pedidos/pedidos.component';
+import { DetallesPedidoComponent } from './pages/admin-dash/detalles-pedido/detalles-pedido.component';
 
 
 
@@ -54,7 +60,11 @@ import { FormsModule } from '@angular/forms';
     RegisterComponent,
     AdminDashComponent,
     AddmodalComponent,
-    EditmodalComponent
+    EditmodalComponent,
+    BilinginfoComponent,
+    VentasComponent,
+    PedidosComponent,
+    DetallesPedidoComponent
   ],
   imports: [
     BrowserModule,
@@ -75,6 +85,8 @@ import { FormsModule } from '@angular/forms';
     MatInputModule,
     MatTableModule,
     FormsModule,
+    MatStepperModule,
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

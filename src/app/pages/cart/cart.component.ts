@@ -4,6 +4,8 @@ import { AngularFirestoreCollection, AngularFirestore } from '@angular/fire/comp
 import { Observable } from 'rxjs';
 import { CartService } from 'src/app/services/cart.service';
 import { InventoryService } from 'src/app/services/inventory.service';
+import { BilinginfoComponent } from './bilinginfo/bilinginfo.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-cart',
@@ -20,7 +22,7 @@ export class CartComponent implements OnInit {
   total:any = 0
 
 
-  constructor(private cartServ: CartService) { 
+  constructor(private cartServ: CartService, public dialog:MatDialog) { 
    
 
 
@@ -53,6 +55,21 @@ export class CartComponent implements OnInit {
 
   deleteElem(element:any){
     this.cartServ.deleteFromCart(element.item.id, element.item);
+  }
+
+  displaybiling(){
+    const data = {
+      articulos : this.dataSource2,
+      total : this.total,
+      estado: "En proceso",
+      fecha: new Date(),
+    };
+   
+  
+     console.log(data)
+    const dialogRef = this.dialog.open(BilinginfoComponent, {
+      data: data
+    })
   }
 }
 

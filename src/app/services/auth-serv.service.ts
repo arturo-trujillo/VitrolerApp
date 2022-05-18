@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { take } from 'rxjs';
 import { UserRolesService } from './user-roles.service';
+
 
 
 @Injectable({
@@ -10,7 +12,7 @@ import { UserRolesService } from './user-roles.service';
 })
 export class AuthServService {
   userData: any; 
-  constructor(private auth: AngularFireAuth, private router: Router, private UserS: UserRolesService) { 
+  constructor(private auth: AngularFireAuth, private router: Router, private UserS: UserRolesService,private _snackBar: MatSnackBar) { 
     this.auth.authState.subscribe((user) => {
       if (user) {
         this.userData = user;
@@ -36,11 +38,12 @@ export class AuthServService {
             console.log("to dash!")
             this.router.navigate(['admin-dash'])
           }
+          this._snackBar.open("Bienvenido", "Cerrar")
          })
         
         
     })
-    .catch(()=> alert('No se pudo iniciar sesion'))
+    .catch(()=>  this._snackBar.open("No se puede iniciar sesion", "Cerrar"))
   }
 
   createUser(email:string, password:string){
@@ -48,9 +51,9 @@ export class AuthServService {
 
     .then((result)=>{
       this.UserS.createUser(result.user?.uid || " ", "1" );
-      alert("Usuario generado!")
+      this._snackBar.open("Usuario generado!", "Cerrar")
     })
-    .catch(()=> alert('No se pudo registrar'))
+    .catch(()=> this._snackBar.open("No se pudo registrar", "Cerrar"))
    
   }
 

@@ -5,6 +5,8 @@ import { InventoryService } from 'src/app/services/inventory.service';
 import { MatDialog } from '@angular/material/dialog';
 import { AddmodalComponent } from './addmodal/addmodal.component';
 import { EditmodalComponent } from './editmodal/editmodal.component';
+import { PedidosComponent } from './pedidos/pedidos.component';
+import { VentasComponent } from './ventas/ventas.component';
 
 
 
@@ -46,6 +48,14 @@ export class AdminDashComponent implements OnInit {
       data: data,
 
     })
+  }
+
+  openPedidos(){
+    const dialogRef = this.dialog.open(PedidosComponent)
+  }
+
+  openVentas(){
+    const dialogRef = this.dialog.open(VentasComponent)
   }
 
   delete(data:any){

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { user } from '@angular/fire/auth';
 import { MatDialog } from '@angular/material/dialog';
 import { LoginComponent } from '../login/login.component';
 import { RegisterComponent } from '../register/register.component';
@@ -23,7 +24,18 @@ export class NavbarComponent implements OnInit {
   loadregister(){
     const dialogRef = this.dialog.open(RegisterComponent);
   }
+
+  logout(){
+    localStorage.setItem("user", "null");
+  }
   
+  userlogged(){
+  
+    if(localStorage.getItem("user") == "null"){
+      return true;
+    }else
+      return false;
+  }
   ngOnInit(): void {
    
   }

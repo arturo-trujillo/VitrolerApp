@@ -48,10 +48,10 @@
           <tr mat-row *matRowDef="let row; columns: displayedColumns;let i = index;"></tr>
     </table>>
 </div>
-<div >
-    <h1 style="color: white;"> {{total}}</h1>
+<div class="total" >
+    <h1 style="color: white; padding-top: 20px;"> Total = ${{total}} MXN</h1>
     
-    <button mat-raised-button> Siguiente</button>
+    <button style="margin-left: 100px;" mat-raised-button color='accent' (click)="displaybiling()"> Siguiente</button>
 </div>
 
 

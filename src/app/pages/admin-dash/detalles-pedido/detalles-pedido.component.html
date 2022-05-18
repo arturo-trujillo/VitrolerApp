@@ -1,0 +1,85 @@
+<div>
+  <mat-card> 
+    <ul>
+
+      <li>
+        <h1> {{this.usuario.nombre}}</h1>
+        <h2>{{this.usuario.apellido}}</h2>
+
+      </li>
+
+      <li>
+        <h1> {{this.usuario.correo}}</h1>
+      </li>
+      <li>
+        <h1> {{this.usuario.telefono}}</h1>
+      </li>
+    </ul>
+
+  </mat-card>
+</div>
+
+<div>
+  <mat-card>
+    <ul>
+      <li>
+        <h1> {{this.direccion.calle}}</h1>
+      </li>
+      <li>
+        <h1> {{this.direccion.colonia}}</h1>
+      </li>
+      <li>
+        <h1> {{this.direccion.estado}}</h1>
+      </li>
+      <li>
+        <h1> {{this.direccion.municipio}}</h1>
+      </li>
+      <li>
+        <h1> {{this.direccion.codigoPostal}}</h1>
+      </li>
+    </ul>
+  </mat-card>
+</div>
+
+<div class="pedidos">
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      
+        <ng-container matColumnDef="Imagen">
+            <th mat-header-cell *matHeaderCellDef>
+                Imagen
+            </th>
+            <td mat-cell *matCellDef="let element"><img  src={{element.item.Imagen}}></td>
+        </ng-container>
+    
+      <ng-container matColumnDef="Nombre">
+          <th mat-header-cell *matHeaderCellDef> Nombre </th>
+          <td mat-cell *matCellDef="let element"> {{element.item.Nombre}} </td>
+        </ng-container>
+    
+        <!-- Weight Column -->
+        <ng-container matColumnDef="Cantidad">
+        <th mat-header-cell *matHeaderCellDef> Cantidad </th>
+        <td mat-cell *matCellDef="let element ; let i=index ">   {{element.cantidad}} </td>
+        </ng-container>
+      
+        <!-- Weight Column -->
+        <ng-container matColumnDef="precioUnitario">
+          <th mat-header-cell *matHeaderCellDef> Precio Unitario </th>
+          <td mat-cell *matCellDef="let element"> {{element.item.Precio}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="precioTotal">
+            <th mat-header-cell *matHeaderCellDef> Precio Total </th>
+            <td mat-cell *matCellDef="let element"> {{element.item.precioTotal}} </td>
+          </ng-container>
+
+    
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      
+      </table>
+      
+
+</div>
