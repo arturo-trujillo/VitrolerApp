@@ -1,0 +1,8 @@
+{
+    "/api/*": {
+        "target": "/index.html",
+        "secure": false,
+        "logLevel": "debug"
+    }
+}
+
