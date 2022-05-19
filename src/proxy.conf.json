@@ -1,6 +1,6 @@
 {
     "/api/*": {
-        "target": "http://localhost:3000",
+        "target": "https://vitrolerapp.netlify.app/",
         "secure": false,
         "logLevel": "debug"
     }
