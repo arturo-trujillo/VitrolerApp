@@ -1,7 +1,7 @@
+
 {
-    "/api/*": {
-        "target": "https://vitrolerapp.netlify.app/",
-        "secure": false,
-        "logLevel": "debug"
-    }
+  "/api": {
+    "target": "file:///runtime.42e1084b2f60e671.js",
+    "secure": false
+  }
 }

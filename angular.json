@@ -75,10 +75,12 @@
             "production": {
               "browserTarget": "VitroleraApp:build:production",
               "proxyConfig": "src/proxy.conf.json"
+              
             },
             "development": {
               "browserTarget": "VitroleraApp:build:development",
               "proxyConfig": "src/proxy.conf.json"
+              
             }
           },
           "defaultConfiguration": "development"
@@ -87,6 +89,7 @@
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
             "browserTarget": "VitroleraApp:build"
+
           }
         },
         "test": {
